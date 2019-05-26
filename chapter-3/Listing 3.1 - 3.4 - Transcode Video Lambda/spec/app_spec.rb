@@ -8,7 +8,7 @@ describe '#lambda_handler' do
 
   let(:event) do
     File.open(File.expand_path('fixtures/files/event.json', __dir__)) do |j|
-      JSON.parse(j)
+      JSON.parse(j.read)
     end
   end
 
