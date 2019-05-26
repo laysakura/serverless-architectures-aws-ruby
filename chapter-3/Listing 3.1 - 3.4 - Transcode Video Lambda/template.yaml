@@ -1,17 +1,17 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'sample ruby application'
+Description: Transcode a video uploaded to S3
 
 Resources:
   TranscodeVideoFunc:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.lambda_handler
+      Handler: app.lambda_handler
       Runtime: ruby2.5
 
 Outputs:
   TranscodeVideoFunc:
-    Description: Hello Ruby Record Lambda Function ARN
+    Description: Video transcoder Lambda Function ARN
     Value:
       Fn::GetAtt:
       - TranscodeVideoFunc
