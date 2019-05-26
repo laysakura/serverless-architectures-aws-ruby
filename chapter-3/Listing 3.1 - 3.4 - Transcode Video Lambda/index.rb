@@ -2,5 +2,5 @@ require 'json'
 
 def lambda_handler(event:, context:)
     # TODO implement
-    { statusCode: 200, body: JSON.generate('Hello from Lambda!') }
+    { statusCode: 200, body: JSON.generate('Hello from laysakura!') }
 end

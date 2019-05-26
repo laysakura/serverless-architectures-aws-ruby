@@ -3,16 +3,16 @@ Transform: AWS::Serverless-2016-10-31
 Description: 'sample ruby application'
 
 Resources:
-  TranscodeVideoFunction:
+  TranscodeVideoFunc:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.lambda_handler
       Runtime: ruby2.5
 
 Outputs:
-  TranscodeVideoFunction:
+  TranscodeVideoFunc:
     Description: Hello Ruby Record Lambda Function ARN
     Value:
       Fn::GetAtt:
-      - TranscodeVideoFunction
+      - TranscodeVideoFunc
       - Arn
