@@ -4,7 +4,7 @@ require 'json'
 require_relative '../app'
 
 describe '#lambda_handler' do
-  subject { lambda_handler(event: event, context: '') }
+  subject { -> { lambda_handler(event: event, context: '') } }
 
   let(:event) do
     File.open(File.expand_path('fixtures/files/event.json', __dir__)) do |j|
@@ -12,10 +12,11 @@ describe '#lambda_handler' do
     end
   end
 
-  it do
-    is_expected.to eq(
-      statusCode: 200,
-      body: JSON.generate('Hello from laysakura!')
-    )
+  context 'when Aws::ElasticTranscoder::Client#create_job succeeds' do
+    before { Aws.config[:stub_responses] = true }
+
+    it do
+      is_expected.not_to raise_error
+    end
   end
 end

@@ -35,9 +35,5 @@ def lambda_handler(event:, context:)
   }
 
   transcoder_client = Aws::ElasticTranscoder::Client.new(region: 'ap-northeast-1')
-  resp = transcoder_client.create_job(params)
-
-  p resp
-
-  { statusCode: 200, body: JSON.generate('Hello from laysakura!') }
+  transcoder_client.create_job(params)
 end
