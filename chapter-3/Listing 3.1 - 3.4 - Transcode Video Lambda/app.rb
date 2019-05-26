@@ -14,7 +14,7 @@ def lambda_handler(event:, context:)
   output_key = source_key.split('.')[0]
 
   params = {
-    pipeline_id: '1451470066051-jscnci',
+    pipeline_id: '1558853247228-pq7tuv',
     input: {
       key: source_key
     },
