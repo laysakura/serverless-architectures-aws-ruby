@@ -8,6 +8,7 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: ruby2.5
+      Role: arn:aws:iam::958135493453:role/book-lambda-s3-execution-role
 
 Outputs:
   TranscodeVideoFunc:
