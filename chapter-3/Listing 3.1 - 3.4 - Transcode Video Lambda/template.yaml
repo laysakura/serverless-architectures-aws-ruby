@@ -10,6 +10,19 @@ Resources:
       Runtime: ruby2.5
       Role: arn:aws:iam::958135493453:role/book-lambda-s3-execution-role
 
+  TriggerLambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt 
+        - TranscodeVideoFunc
+        - Arn
+      Principal: s3.amazonaws.com
+      SourceArn: !Join 
+                  - ""
+                  - - 'arn:aws:s3:::'
+                    - book-serverless-video-upload
+
 Outputs:
   TranscodeVideoFunc:
     Description: Video transcoder Lambda Function ARN
