@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Set permissions to transcoded video
+
+Resources:
+  SetPermissionsFunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: ruby2.5
+      Role: arn:aws:iam::958135493453:role/book-lambda-s3-execution-role
+
+Outputs:
+  SetPermissionsFunc:
+    Value:
+      Fn::GetAtt:
+      - SetPermissionsFunc
+      - Arn
