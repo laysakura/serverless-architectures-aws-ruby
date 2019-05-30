@@ -12,7 +12,7 @@ describe '#lambda_handler' do
     end
   end
 
-  context 'when Aws::S3::Client#put_object succeeds' do
+  context 'when Aws::S3::Client#put_object_acl succeeds' do
     before { Aws.config[:stub_responses] = true }
 
     it do

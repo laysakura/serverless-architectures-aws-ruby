@@ -19,5 +19,5 @@ def lambda_handler(event:, context:)
   }
 
   s3_client = Aws::S3::Client.new(region: 'ap-northeast-1')
-  s3_client.put_object(params)
+  s3_client.put_object_acl(params)
 end
